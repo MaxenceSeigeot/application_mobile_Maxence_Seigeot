@@ -24,7 +24,7 @@ Future<void> signUp_(
         await firestore
             .collection('Users')
             .doc(credential.user?.uid)
-            .set({"faction": '', 'username': ''});
+            .set({"faction": '', 'username': email});
 
         final userProvider = Provider.of<UserProvider>(context, listen: false);
         Map<String, dynamic> userDataMap = {'userId': credential.user?.uid};
